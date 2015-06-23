@@ -21,8 +21,45 @@ class UserInterfaceTestingUITests: XCTestCase {
         XCUIApplication().launch()
     }
     
-    func testExample() {
+    func testTapViewDetailWhenSwitchIsOffDoesNothing() {
+        let app = XCUIApplication()
         
+        // Change the switch to off.
+        app.switches["View Detail Enabled Switch"].tap()
+        
+        // Tap the view detail button.
+        app.buttons["View Detail"].tap()
+        
+        // Verify that nothing has happened and we are still at the menu scren.
+        XCTAssertEqual(app.navigationBars.element.identifier, "Menu")
     }
     
+    func testTapViewDetailWhenSwitchIsOnNavigatesToDetailViewController() {
+        let app = XCUIApplication()
+        
+        // Tap the view detail button.
+        app.buttons["View Detail"].tap()
+        
+        // Verify that navigation occurred and we are at the detail screen.
+        XCTAssertEqual(app.navigationBars.element.identifier, "Detail")
+    }
+    
+    func testTapIncrementButtonIncrementsValueLabel() {
+        let app = XCUIApplication()
+        
+        // Tap the view detail button to open the detail page.
+        app.buttons["View Detail"].tap()
+
+        // Store the increment value button and the value label as we will use them a lot.
+        let incrementButton = app.buttons["Increment Value"]
+        let valueLabel = app.staticTexts["Number Value Label"]
+        
+        for index in 0...10 {
+            // Tap the increment value button.
+            incrementButton.tap()
+
+            // Ensure that the value has increased by 1.
+            XCTAssertEqual(valueLabel.value as! String, "\(index)")
+        }
+    }
 }

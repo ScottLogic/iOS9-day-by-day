@@ -4,7 +4,7 @@
 Automated User Interface Testing is a valuable tool when developing any software application. It can detect problems with your app quickly, and a successful test suite run can provide you with confidence before a release. On the iOS platform, this is currently done using UIAutomation, with tests written in JavaScript. This involves opening up a separate app, Instruments, and creating and running scripts. The workflow is painfully slow and takes a long time to get used to. 
 
 ##UI Testing
-With Xcode 7, Apple have introduced a new way to conduct user interface testing on your apps. UI testing allows you to find and interact with UI elements, and validate their properties and state. UI testing is fully integrated with Xcode 7 test reports, and will run alongside your unit tests. XCTest has been Xcode's integrated testing framework since Xcode 5, but in Xcode 7, it has been updated to include new UI testing abilities. This allows you to make assertions which  check the state of your UI at a certain point.
+With Xcode 7, Apple have introduced a new way to conduct user interface testing on your apps. UI testing allows you to find and interact with UI elements, and validate their properties and state. UI testing is fully integrated with Xcode 7 test reports, and will run alongside your unit tests. XCTest has been Xcode's integrated testing framework since Xcode 5, but in Xcode 7, it has been updated to include new UI testing abilities. This allows you to make assertions which will check the state of your UI at a certain point.
 
 ###Accessibility
 In order for UI Testing to work, the framework needs to be able to access the various elements inside the UI so it can carry out it's actions. You could define specific points where the tests should tap and swipe, but this would fall down on different sized devices, or if you made tweaks to the positions of the elements in your UI.
@@ -24,9 +24,117 @@ In Xcode 7, when you create a new project, you can choose whether to include UI 
 
 ![Creating a new project with UI Tests](images/newProject.png)
 
+The project set up in this example is very simple but should be enough for us to demonstrate how the UI Testing works in Xcode 7. 
 
+![The structure of the demo app](images/appLayout.png)
+
+There is a menu view controller that contains a switch and a button that links you to a detail view controller. When the switch is in the "off" state, the button should be disabled and navigation should not be possible. The detail view controller contains a simple button which increments the value in a label.
 
 ### Using UI Recording
+Once the UI has been set up and is functional, we can write some UI tests to ensure that any changes in the code do not effect functionality. 
+
+#### The XCTest UI Testing API
+
+Before we start recording actions we must decide what we want to assert. In order to assert certain things about our UI, we can use the XCTest Framework, which has been expanded to include three new pieces of API.
+
+- **XCUIApplication**. This is a proxy for the application you are testing. It allows you to launch your application so that you can run tests on it. It's worth noting that it always launches a new process. This takes a little more time, but it means that the slate is always clean when it comes to testing your app and there are fewer variables that you have to deal with.
+
+- **XCUIElement**. This is a proxy for the UI elements for the application you are testing. Elements all have types and identifiers, which you can combine to allow you to find the elements in the application. The elements are all nested in a tree which represents your application.
+
+- **XCUIElementQuery**. When you want to find elements, you use element queries. Every `XCUIElement` is backed by a query. Such queries search the XCUIElement tree and **must** resolve to exactly one match. Otherwise your test will fail when you try to access the element. The exception to this is the `exists` property, where you can check if an element is present in the tree. This is useful for assertions. You can use `XCUIElementQuery` more generally, when you want to find elements that are visible to accessibility. Queries return a set of results.
+
+Now that we have a way to explore the API we are ready to start writing some tests.
+
+####Test 1 - Ensuring no navigation takes place when the switch is off
+First of all we must define a function that will contain our test.
+
+    func testTapViewDetailWhenSwitchIsOffDoesNothing() {
+    
+    }
+    
+When the function has been defined, we move the mouse cursor inside of its brackets and tap the record button at the bottom of the Xcode window.
+
+![Preparing to record the actions for the first test](images/prerecording.png)
+
+The app will now launch. Tap the switch to turn it off, then tap the "View Detail" button. The following should now appear inside `testTapViewDetailWhenSwitchIsOffDoesNothing`.
+
+		let app = XCUIApplication()
+		app.switches["View Detail Enabled Switch"].tap()
+		app.buttons["View Detail"].tap()
+
+Now click the record button again and the recording should stop. We can see that the app didn't actually display the detail view controller, but the test has no way of knowing that currently. We must assert that nothing has changed. We can do this by inspecting the title of the navigation bar. This might not be appropriate for all use cases, but it works for us here.
+
+		XCTAssertEqual(app.navigationBars.element.identifier, "Menu")
+
+Once you've added this line, run the test again and it should still pass. Try changing the "Menu" string to "Detail" for example, and it should fail. Here's the final result of this test with some comments added to explain the behaviour:
+
+	func testTapViewDetailWhenSwitchIsOffDoesNothing() {
+		let app = XCUIApplication()
+    
+		// Change the switch to off.
+		app.switches["View Detail Enabled Switch"].tap()
+    
+		// Tap the view detail button.
+		app.buttons["View Detail"].tap()
+    
+		// Verify that nothing has happened and we are still at the menu scren.
+		XCTAssertEqual(app.navigationBars.element.identifier, "Menu")
+	}
+
+####Test 2 - Ensuring navigation takes place when the switch is on
+The second test is similar to the first, so we won't go through it in detail. The only difference here is that the switch is enabled, so the app should load the detail screen, and the XCTAssertEqual verifies this.
+
+	func testTapViewDetailWhenSwitchIsOnNavigatesToDetailViewController() {
+		let app = XCUIApplication()
+        
+		// Tap the view detail button.
+		app.buttons["View Detail"].tap()
+        
+		// Verify that navigation occurred and we are at the detail screen.
+		XCTAssertEqual(app.navigationBars.element.identifier, "Detail")
+	}
+
+####Test 3 - Ensuring the increment button increments the value label.
+In this test we verify that when a user clicks the increment button, the value label increases by 1. The first two lines of this test are very similar, so we can copy and paste them from the previous test.
+
+		let app = XCUIApplication()
+		
+		// Tap the view detail button to open the detail page.
+		app.buttons["View Detail"].tap()
+
+Next we need to gain access to the button. We will want to tap this a few times so we will store it as a variable. Rather than manually typing the code to find the button and having to debug it, launch the recorder again and click the button. This will give you the following code.
+
+	app.buttons["Increment Value"].tap()
+	
+We can then stop the recorder and change this to
+
+	let incrementButton = app.buttons["Increment Value"]
+	
+This way we don't need to manually type out the code to find the button. We do the same for the value label.
+
+	let valueLabel = app.staticTexts["Number Value Label"]
+	
+Now we have the UI elements we are interested in we can interact with them. In this test we will verify that after tapping on the button 10 times, the label is updated accordingly. We could record this 10 times in the recorder, but because we stored the elements above, we can simply put it in a for loop.
+
+	for index in 0...10 {
+		// Tap the increment value button.
+		incrementButton.tap()
+
+		// Ensure that the value has increased by 1.
+		XCTAssertEqual(valueLabel.value as! String, "\(index+1)")
+	} 
+
+These three tests are far from a comprehensive test suite, but they should give you a good starting point and you should be able to expand upon them easily. Why not try adding a test yourself that verifies that the button is enabled and you can navigate if you turn the switch off and then back on again?
+
+#### When a Test Fails
+If a test fails, you can access the test reports in the Report Navigator
+
+TODO TODO
+
+![Test Report Failure](images/testFailure.png)
+
+
+You can also add breakpoints
 
 
 #### When Recording Goes Wrong
@@ -40,12 +148,3 @@ Once you've identified the issue, open up interface builder and in the identity 
 
 ![Xcode Accessibility panel in the identity inspector.](images/accessibilityPanel.png)
 
-### The XCTest UI Testing API
-
-As you can see from the code generated by the recording above, XCTest has been expanded to include three new pieces of API.
-
-- **XCUIApplication**. This is a proxy for the application you are testing. It allows you to launch your application so that you can run tests on it. It's worth noting that it always launches a new process. This takes a little more time, but it means that the slate is always clean when it comes to testing your app and there are fewer variables that you have to deal with.
-
-- **XCUIElement**. This is a proxy for the UI elements for the application you are testing. Elements all have types and identifiers, which you can combine to allow you to find the elements in the application. The elements are all nested in a tree which represents your application.
-
-- **XCUIElementQuery**. When you want to find elements, you use element queries. Every `XCUIElement` is backed by a query. Such queries search the XCUIElement tree and **must** resolve to exactly one match. Otherwise your test will fail when you try to access the element. The exception to this is the `exists` property, where you can check if an element is present in the tree. This is useful for assertions. You can use `XCUIElementQuery` more generally, when you want to find elements that are visible to accessibility. Queries return a set of results.

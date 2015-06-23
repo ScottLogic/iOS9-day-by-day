@@ -7,7 +7,7 @@
         <!--Menu-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MenuViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MenuViewController" customModule="UserInterfaceTesting" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -32,6 +32,7 @@
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rXf-x0-fj3">
                                 <rect key="frame" x="276" y="80" width="51" height="31"/>
+                                <accessibility key="accessibilityConfiguration" label="View Detail Enabled Switch"/>
                                 <connections>
                                     <action selector="switchValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="m5N-xL-J2W"/>
                                 </connections>
@@ -76,9 +77,13 @@
                                 <state key="normal" title="Increment Value">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="incrementTapped:" destination="3Nc-63-bmb" eventType="touchUpInside" id="6GJ-n8-Ceb"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5xT-MW-qJC">
                                 <rect key="frame" x="285" y="271" width="30" height="58"/>
+                                <accessibility key="accessibilityConfiguration" identifier="Number Value Label" label=""/>
                                 <fontDescription key="fontDescription" type="system" pointSize="48"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -93,6 +98,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Detail" id="FzI-5a-zW2"/>
+                    <connections>
+                        <outlet property="valueLabel" destination="5xT-MW-qJC" id="uuJ-Ir-3Vn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E8x-54-d9h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

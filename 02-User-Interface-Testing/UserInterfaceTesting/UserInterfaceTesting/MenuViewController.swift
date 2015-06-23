@@ -14,5 +14,6 @@ class MenuViewController: UIViewController {
     
     @IBAction func switchValueChanged(sender: UISwitch) {
         viewDetailButton.enabled = sender.on
+        viewDetailButton.alpha = sender.on ? 1 : 0.5
     }
 }
