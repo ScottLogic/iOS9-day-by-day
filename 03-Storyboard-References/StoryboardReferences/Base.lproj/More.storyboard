@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.14"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--More-->
         <scene sceneID="yTw-qx-dLT">
             <objects>
                 <viewController id="d21-x6-QIT" sceneMemberID="viewController">
@@ -69,7 +69,7 @@
                             <constraint firstItem="JYd-Mx-uq7" firstAttribute="centerX" secondItem="Ovr-xQ-QJp" secondAttribute="centerX" id="fZc-qG-tNt"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="zeV-do-gTq"/>
+                    <navigationItem key="navigationItem" title="More" id="9BJ-zC-bti"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EXA-Uu-1Bc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -211,7 +211,7 @@ Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolor
         <!--Account Details-->
         <scene sceneID="9CR-sa-9pd">
             <objects>
-                <viewController id="2RK-jg-DyV" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="accountViewController" id="2RK-jg-DyV" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="o7N-vD-X9k"/>
                         <viewControllerLayoutGuide type="bottom" id="E2a-OM-Cb6"/>

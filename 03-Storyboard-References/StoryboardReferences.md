@@ -30,3 +30,48 @@ Give the storyboard a name of `More.storyboard` then click save. `More.storyboar
 You can see that the storyboard has been created. If you now return to `Main.storyboard`, you will see that one of the tab bar controller's view controller has changed to a Storyboard Reference.
 
 ![Xcode's new 'refactor to storyboard' menu item](images/mainReference.png)
+
+That's great. We've managed to pull out a whole section of our UI into a separate storyboard, which not only helps with separation of concerns, but also allows us to reuse the storyboard in other areas of our app. Not particularly useful in this case, but this will be a valuable addition for many use cases.
+
+So now we want to pull the other regions of our application out into separate storyboards. This is a little more complicated than the first step, due to the fact that both of these sections reference a common view controller. Both table views have a segue that presents the Contact Detail view controller. There are a couple of options here.
+
+- Keep the common view controller in the Main.storyboard.
+- Refactor the common view controller into it's own storyboard.
+
+Both options will work, but my personal preference is to keep things separate. So select the Contact Detail view controller and again go to Xcode's Editor menu, selecting "Refactor to Storyboard". Give the storyboard a name and click save. That will create yet another storyboard and open it. The links to the view controller from the contacts and favourites table view controllers will be created for you.
+
+Now go back into `Main.storyboard` and select the contacts navigation and table view controllers. Refactor those to a storyboard, then do the same for the favourites view controllers. This should be the result.
+
+![How main.storyboard should look after refactoring](images/result.png)
+
+We have now split `Main.storyboard` out into 5 separate storyboard instances in the project.
+
+- `Main.storyboard` simply contains a tab bar controller and sets the view controllers on it from the separate storyboards.
+- `Contacts.storyboard` which is a navigation controller and a table view controller which when tapped links to `ContactDetail.storyboard`
+- `Favorites.storyboard` which is a navigation controller and a table view controller which when tapped links to `ContactDetail.storyboard`
+- `ContactDetail.storyboard` displays a single view controller that is accessed from both the contacts and the favourites storyboards.
+- `More.storyboard` which contains a view controllers that show information about the app.
+
+This restructuring has made our storyboard structure a lot more modular, which should help when developing the app further! 
+
+### Opening a Specific View Controller from a Storyboard Reference
+Until now, we have only demonstrated how to present a storyboard from a segue when we want to present the storyboard's initial view controller, and we also haven't looked at how to add a Storyboard Reference manually, without the refactoring tool.
+
+Let's assume that we want to add a UIBarButtonItem to the top right of the Contacts table view controller which will show us more information about our account quickly, without having to go through settings.
+
+Open `Contacts.Storyboard` and drag a UIBarButtonItem onto the table view controller's navigation bar. Change it's title to "Account". Once that is done, find the new "Storyboard Reference" object in the interface builder object reference panel. Drag that into the Contacts storyboard and then open the attributes inspector.
+
+Select the "More" storyboard, then in the "Referenced ID" field, enter "accountViewController". This allows us to reference the account details view controller, rather than the more storyboard's initial view controller.
+
+![Setting up the account view controller reference.](images/accountViewController.png)
+
+Once the Storyboard Reference for the account view controller is present, select the account button. Hold down Control + Click and then drag to the newly created Storyboard Reference to create a segue.
+
+![The final contacts storyboard.](images/accountSegue.png)
+
+The final step is to give the account view controller the identifier we just specified. So open up `More.storyboard` and select the account view controller. Open the identity inspector and set the Storyboard ID to "accountViewController". Now when you launch the app and tap account, you should see the account view controller pushed onto the contacts navigation controller's stack.
+
+As we have seen, adding Storyboard References (either with the refactoring tool or manually in interface builder) is simple, straightforward and effective. It allows you to create reusable components with storyboards, and helps to keep your UI modular. As ever, the results of this tutorial are [available on GitHub](https://github.com/shinobicontrols/iOS9-day-by-day/tree/master/03-Storyboard-References).
+
+## Further Reading
+For more information on Storyboard References in Xcode 7, I'd recommend watching WWDC session 215, [What's New in Storyboards](https://developer.apple.com/videos/wwdc/2015/?id=215). The first 20 minutes covers the new Storyboard Reference functionality.
