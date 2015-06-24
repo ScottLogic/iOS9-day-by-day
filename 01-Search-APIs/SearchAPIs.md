@@ -5,18 +5,18 @@ Prior to iOS9, you could only use spotlight to find apps by their name. With the
 
 ##The 3 APIs
 ###NSUserActivity
-The NSUserActivity API was introduced in iOS8 for Handoff, but iOS9 now allows activities to be searchable. You can now provide metadata to these activities, meaning that spotlight can index them. This acts as a history stack, similar to when you are browsing the web. The user can quickly open their recent activities from Spotlight.
+The NSUserActivity API was introduced in iOS8 for Handoff, but iOS9 allows activities to be searchable. You can now provide metadata to these activities, meaning that spotlight can index them. This acts as a history stack, similar to when you are browsing the web. The user can quickly open their recent activities from Spotlight.
 
 ###Web Markup
 Web Markup allows apps that mirror their content on a website to index their content in Spotlight. Users don't need to have the app installed on their device for results to appear in Spotlight. Apple's Indexer will now crawl the web looking for this particular markup in your website. This is then provided to users in both Safari and Spotlight.
 
- The fact that results can appear even when your app is **not** installed on a user's device. This new feature could give your app a lot more exposure to potential users. The deep links from your applications that you expose as public to the Search APIs will be stored in Apple's cloud index. To learn more about Web Markup, take a look at Apple's [Use Web Markup to Make App Content Searchable](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html#//apple_ref/doc/uid/TP40016198-SW4) documentation.
+The fact that results can appear even when your app is **not** installed on a user's device could lead to a lot more exposure to potential users. The deep links from your applications that you expose as public to the Search APIs will be stored in Apple's cloud index. To learn more about Web Markup, take a look at Apple's [Use Web Markup to Make App Content Searchable](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html#//apple_ref/doc/uid/TP40016198-SW4) documentation.
 
 ###CoreSpotlight
 CoreSpotlight is a new iOS9 framework which allows you to index any content inside of your app. While NSUserActivity is useful for saving the user's history, with this API, you can index any data you like. It essentially provides you with low level access to the CoreSpotlight index on the user's device.
 
 ##Using the Core Spotlight APIs
-While the NSUserActivity and Web Markup APIs are relatively simple to use, CoreSpotlight is a little more complex. To demonstrate how the new Core Spotlight APIs work, let's create a simple app that shows a list of our friends, and then a picture of them when you tap on their name. You can [find the code on GitHub](https://github.com/shinobicontrols/iOS9-day-by-day/tree/master/01-Search-APIs) and follow along with what we are building there.
+The NSUserActivity and Web Markup APIs are relatively simple to use, however CoreSpotlight is a little more complex. To demonstrate how the new Core Spotlight APIs work, let's create a simple app that shows a list of our friends, and then a picture of them when you tap on their name. You can [find the code on GitHub](https://github.com/shinobicontrols/iOS9-day-by-day/tree/master/01-Search-APIs) and follow along with what we are building there.
 
 ![What we are going to build.](images/friendApp.png)
 
@@ -41,7 +41,7 @@ First of all, we override the `init()` method of the `Datasource` class, where w
 
 Once the data is stored in the `people` array, the `Datasource` is ready to use!
 
-Now the data is ready, the `FriendTableViewController` can create an instance of `Datasource` to use when its table view requests cells for display.
+Now that the data is ready, the `FriendTableViewController` can create an instance of `Datasource` to use when its table view requests cells for display.
 
 	let datasource = Datasource()
 	
@@ -52,7 +52,7 @@ In the `cellForRowAtIndexPath` function, displaying the contents in the cell is 
 
 ###Saving the person entries to Core Spotlight
 
-Now the mocked data exists, we can store it in Core Spotlight using the new APIs available in iOS 9. Back in the `Datasource` class, we have defined a function, `savePeopleToIndex`. The `FriendTableViewController` can then call this function when the view has loaded.
+Now the mocked data exists, we can store it in Core Spotlight using the new APIs available in iOS 9. Back in the `Datasource` class, we have defined a function, `savePeopleToIndex`. The `FriendTableViewController` can call this function when the view has loaded.
 
 In the function, we iterate through each person in the `people` array, creating a `CSSearchableItem` for each of them and storing them into a temporary array named `searchableItems`.
 
@@ -72,7 +72,7 @@ The final step is to call `indexSearchableItems` on the default `CSSearchableInd
 		}
 	})
 
-And that's it! When you run your application, the data will be stored Now, when you search in spotlight, your friends should appear!
+And that's it! When you run your application, the data will be stored. When you search in spotlight, your friends should appear!
 
 ![As you can see from the screenshot, there's a known issue in iOS9 beta 1 where thumbnail images don't show in Spotlight.](images/searchResults.png)
 
@@ -108,7 +108,7 @@ In the demo above, we've seen how easy it is to integrate your application's dat
 We have **not** covered how to remove data from the index, however. This is important and you should always try to keep the index that your application uses up to date. For information on how to remove old entries from CoreSpotlight, take a look at the `deleteSearchableItemsWithIdentifiers`, `deleteSearchableItemsWithDomainIdentifiers` and `deleteAllSearchableItemsWithCompletionHandler` functions.
 
 ##The Importance of Good Citizenship
-Although it may seem like a good idea to get as much of your content into Spotlight and Safari as possible, think twice before spamming the search indexes with your content. Being a good citizen in the iOS ecosystem is not only important to keep your customers happy, but Apple will also notice. They have clearly invested a lot into protecting relevance, engagement ratios are tracked and spammers will be moved to the bottom of search results.
+Although it may seem like a good idea to get as much of your content into Spotlight and Safari as possible, think twice before spamming the search indexes with your content. Being a good citizen in the iOS ecosystem is not only important to keep your customers happy, but Apple will also notice. They have clearly invested a lot into protecting relevance. Engagement ratios are tracked and spammers will be moved to the bottom of search results.
 
 ##Further Information
 For more information on the new Search APIs, I'd recommend watching WWDC session 709, [Introducing Search APIs](https://developer.apple.com/videos/wwdc/2015/?id=709). You may also be interesting in reading the [NSUserActivity Class Reference](https://developer.apple.com/library/prerelease/ios/documentation/Foundation/Reference/NSUserActivity_Class/) as well as the [documentation for CoreSpotlight](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html#//apple_ref/doc/uid/TP40016198-SW3).
