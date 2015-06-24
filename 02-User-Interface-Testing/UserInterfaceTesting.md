@@ -1,4 +1,4 @@
-#iOS9 Day by Day
+#iOS 9 Day by Day
 # 2. User Interface Testing
 
 Automated User Interface Testing is a valuable tool when developing any software application. It can detect problems with your app quickly, and a successful test suite run can provide you with confidence before a release. On the iOS platform, this is currently done using UIAutomation, with tests written in JavaScript. This involves opening up a separate app, Instruments, and creating and running scripts. The workflow is painfully slow and takes a long time to get used to. 
@@ -14,10 +14,10 @@ This is where accessibility can help. Accessibility is a long established Apple 
 UI Testing has the ability to interface with your app through the Accessibility features that your app provides, which gives you a great solution to the different sized device problem, and provides you from having to rewrite your entire test suite if you rearrange some elements in your UI. Not only does it help with UI Testing, implementing Accessibility also gives you the added benefit of making your app available to disabled users.
 
 ###UI Recording
-Once you have set up your accessible UI, you'll want to create some UI tests. Writing UI tests can be time consuming, boring, and if you have a complicated UI, difficult! Thankfully in Xcode 7, Apple have introduced UI Recording, which allows you to create new, and expand existing tests. When turned on, code will automatically be generated when you interact with your app on the device or the simulator. Now that we have a good overview of how UI Testing fits together, it's time to have a go at using it!
+Once you have set up your accessible UI, you'll want to create some UI tests. Writing UI tests can be time consuming, boring, and if you have a complicated UI, difficult! Thankfully in Xcode 7, Apple have introduced UI Recording, which allows you to create new, and expand existing tests. When turned on, code will automatically be generated when you interact with your app on the device or the simulator. Now that we have a good overview of how UI Testing fits together, it is time to start using it!
 
 ##Creating UI Tests
-We're going to build a UI Testing suite using the new UI Testing tools to demonstrate how this works. The finished demo application is available at [GitHub](TODO) if you wish to follow along and see the result.
+We're going to build a UI Testing suite using the new UI Testing tools to demonstrate how this works. The finished demo application is [available at GitHub](https://github.com/shinobicontrols/iOS9-day-by-day/tree/master/02-User-Interface-Testing) if you wish to follow along and see the result.
 
 ### Setup
 In Xcode 7, when you create a new project, you can choose whether to include UI Tests. This will set up a placeholder UI Test target for you with all of the configuration you need.
@@ -77,7 +77,7 @@ Once you've added this line, run the test again and it should still pass. Try ch
 		// Tap the view detail button.
 		app.buttons["View Detail"].tap()
     
-		// Verify that nothing has happened and we are still at the menu scren.
+		// Verify that nothing has happened and we are still at the menu screen.
 		XCTAssertEqual(app.navigationBars.element.identifier, "Menu")
 	}
 
@@ -126,17 +126,6 @@ Now we have the UI elements we are interested in we can interact with them. In t
 
 These three tests are far from a comprehensive test suite, but they should give you a good starting point and you should be able to expand upon them easily. Why not try adding a test yourself that verifies that the button is enabled and you can navigate if you turn the switch off and then back on again?
 
-#### When a Test Fails
-If a test fails, you can access the test reports in the Report Navigator
-
-TODO TODO
-
-![Test Report Failure](images/testFailure.png)
-
-
-You can also add breakpoints
-
-
 #### When Recording Goes Wrong
 Sometimes when you tap on an element while recording, you'll notice that the code produced doesn't look quite right. This is usually because the element you are interacting with is not visible to Accessibility. To find out if this is the case, you can use XCode's Accessibility Inspector.
 
@@ -148,3 +137,19 @@ Once you've identified the issue, open up interface builder and in the identity 
 
 ![Xcode Accessibility panel in the identity inspector.](images/accessibilityPanel.png)
 
+#### When a Test Fails
+If a test fails and you aren't sure why, there's a couple of ways to help you fix it. First of all, you can access the test reports in Xcode's Report Navigator. 
+
+![Test Report Failure](images/testFailure.png)
+
+When you open this view and hover over certain steps in the tests, you will see a small eye icon to the right of the test action. If you click this eye, you are presented with a screenshot of the state of your app at that exact point. This will let you visually check the state of your UI and find out exactly what is wrong.
+
+Just like unit tests, you can add breakpoints to UI tests, which allows you to debug the behaviour and find any problems. You can log the view hierarchy and inspect accessibility properties using this technique to see why your test is failing.
+
+##Why you should use UI Testing
+Automated UI Testing is a great way to improve quality assurance while giving you the confidence to make changes to your app. We have seen how simple it is to get UI Testing up and running in Xcode, and how adding Accessibility features to your app cannot only help you test your app, but also has the added benefit of helping users with disabilities to use your app.
+
+One of the best new features of UI Testing in Xcode is the ability to run your tests from your continuous integration server. There's support for doing so with Xcode bots, and also [from the command line](https://krausefx.com/blog/run-xcode-7-ui-tests-from-the-command-line) meaning when a UI Test fails you can be immediately informed!
+
+##Further Reading
+For more information on the new UI Testing features in XCode, I'd recommend watching WWDC session 406, [UI Testing in Xcode](https://developer.apple.com/videos/wwdc/2015/?id=406). You may also be interesting in reading the [Testing in Xcode Documentation](https://developer.apple.com/library/prerelease/ios/documentation/DeveloperTools/Conceptual/testing_with_xcode/chapters/Introduction.html#//apple_ref/doc/uid/TP40014132), and the [Accessibility for Developers Documentation](https://developer.apple.com/accessibility/)

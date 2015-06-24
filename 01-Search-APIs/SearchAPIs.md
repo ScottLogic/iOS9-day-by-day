@@ -16,7 +16,7 @@ Web Markup allows apps that mirror their content on a website to index their con
 CoreSpotlight is a new iOS9 framework which allows you to index any content inside of your app. While NSUserActivity is useful for saving the user's history, with this API, you can index any data you like. It essentially provides you with low level access to the CoreSpotlight index on the user's device.
 
 ##Using the Core Spotlight APIs
-While the NSUserActivity and Web Markup APIs are relatively simple to use, CoreSpotlight is a little more complex. To demonstrate how the new Core Spotlight APIs work, let's create a simple app that shows a list of our friends, and then a picture of them when you tap on their name. You can find the code on GitHub and follow along with what we are building there.
+While the NSUserActivity and Web Markup APIs are relatively simple to use, CoreSpotlight is a little more complex. To demonstrate how the new Core Spotlight APIs work, let's create a simple app that shows a list of our friends, and then a picture of them when you tap on their name. You can [find the code on GitHub](https://github.com/shinobicontrols/iOS9-day-by-day/tree/master/01-Search-APIs) and follow along with what we are building there.
 
 ![What we are going to build.](images/friendApp.png)
 
