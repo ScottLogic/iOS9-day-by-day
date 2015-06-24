@@ -1,5 +1,5 @@
 #iOS9 Day by Day
-# 1. Search APIs
+#1. Search APIs
 
 Prior to iOS9, you could only use spotlight to find apps by their name. With the announcement of the new iOS9 Search APIs, Apple now allow developers to choose what content from their apps they want to index, as well as how the results appear in spotlight, and what happens when the user taps one of the results. 
 

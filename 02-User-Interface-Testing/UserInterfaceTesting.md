@@ -1,5 +1,5 @@
 #iOS 9 Day by Day
-# 2. User Interface Testing
+#2. User Interface Testing
 
 Automated User Interface Testing is a valuable tool when developing any software application. It can detect problems with your app quickly, and a successful test suite run can provide you with confidence before a release. On the iOS platform, this is currently done using UIAutomation, with tests written in JavaScript. This involves opening up a separate app, Instruments, and creating and running scripts. The workflow is painfully slow and takes a long time to get used to. 
 
