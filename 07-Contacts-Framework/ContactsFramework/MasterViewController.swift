@@ -96,7 +96,7 @@ class MasterViewController: UITableViewController, CNContactPickerDelegate {
     
     @IBAction func showContactsPicker(sender: UIBarButtonItem) {
         let contactPicker = CNContactPickerViewController()
-        contactPicker.delegate = self;
+        contactPicker.delegate = self
         contactPicker.displayedPropertyKeys = [CNContactPhoneNumbersKey]
         
         self.presentViewController(contactPicker, animated: true, completion: nil)
