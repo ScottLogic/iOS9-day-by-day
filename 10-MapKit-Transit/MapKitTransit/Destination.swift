@@ -15,7 +15,11 @@ class Destination {
     private var addressDictionary:[String : AnyObject]
     let name:String
     
-    init(withName placeName: String, latitude: CLLocationDegrees, longitude: CLLocationDegrees, address:[String:AnyObject]) {
+    init(withName placeName: String,
+        latitude: CLLocationDegrees,
+        longitude: CLLocationDegrees,
+        address:[String:AnyObject])
+    {
         name = placeName
         coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         addressDictionary = address
@@ -23,7 +27,10 @@ class Destination {
     
     var mapItem:MKMapItem {
         get {
-            let placemark = MKPlacemark(coordinate: self.coordinate, addressDictionary: self.addressDictionary)
+            let placemark = MKPlacemark(
+                coordinate: self.coordinate,
+                addressDictionary: self.addressDictionary)
+            
             let item = MKMapItem(placemark: placemark)
             return item
         }

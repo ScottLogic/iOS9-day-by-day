@@ -40,7 +40,6 @@ class DestinationTableViewCell: UITableViewCell {
             let directions = MKDirections(request: request)
             directions.calculateETAWithCompletionHandler { response, error -> Void in
                 if let err = error {
-                    print(err)
                     self.etaLabel.text = err.userInfo["NSLocalizedFailureReason"] as? String
                     return
                 }

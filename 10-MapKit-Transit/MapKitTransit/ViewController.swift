@@ -90,6 +90,7 @@ class ViewController: UIViewController, UITableViewDataSource, MKMapViewDelegate
     }
 }
 
+// UITableView Datasource
 extension ViewController {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -105,10 +106,13 @@ extension ViewController {
     
 }
 
+// MKMapViewDelegate
 extension ViewController {
+    
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
         let pin = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "pin")
         pin.pinTintColor = annotation === userAnnotation ? UIColor.redColor() : UIColor.blueColor()
         return pin
     }
+    
 }
