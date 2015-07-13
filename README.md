@@ -12,8 +12,9 @@ iOS9 Day-by-Day is a blog series which dives into all the new features available
 
 The blog posts typically have a project which demonstrates the functionality in-action, rather than just being a purely theoretical overview of the technology.
 
-If you have any comments or suggestions for future posts, please feel free contact me @christhegrant, and feel free to fork the repo and have a play around with the code!
+If you have any comments or suggestions for future posts, please feel free contact me [@christhegrant](https://twitter.com/christhegrant), and feel free to fork the repo and have a play around with the code!
 
+Thanks!
 Chris
 
-@christhegrant @shinobicontrols
+[@christhegrant](https://twitter.com/christhegrant) [@shinobicontrols](https://twitter.com/shinobicontrols)
