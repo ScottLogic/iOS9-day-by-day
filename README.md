@@ -8,7 +8,7 @@ This repository contains all the source code associated with each of the article
 
 ##Blog Series
 
-iOS9 Day-by-Day is a blog series which dives into all the new features available for developers in iOS 9. You can read more about it and find an index of the currently published posts here at shinobicontrols.com/blog/ios9-day-by-day-index.
+iOS9 Day-by-Day is a blog series which dives into all the new features available for developers in iOS 9. You can read more about it and find an index of the currently published posts here at http://shinobicontrols.com/blog/ios9-day-by-day-index.
 
 The blog posts typically have a project which demonstrates the functionality in-action, rather than just being a purely theoretical overview of the technology.
 
