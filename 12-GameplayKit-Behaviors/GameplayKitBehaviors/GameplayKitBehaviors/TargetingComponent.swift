@@ -24,7 +24,7 @@ class TargetingComponent: GKAgent2D {
         
         self.maxSpeed = 4000
         self.maxAcceleration = 4000
-        self.mass = 0.1
+        self.mass = 0.4
     }
     
 }

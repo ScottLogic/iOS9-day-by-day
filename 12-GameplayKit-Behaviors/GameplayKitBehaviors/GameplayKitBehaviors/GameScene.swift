@@ -19,10 +19,11 @@ class GameScene: SKScene {
     
     override func didMoveToView(view: SKView) {
         super.didMoveToView(view)
-        
-        playerNode.entity = player
-        player.node = playerNode
-        self.addChild(playerNode)
+    
+        let playerRenderComponent = RenderComponent(entity: player)
+        playerRenderComponent.node.addChild(playerNode)
+        self.addChild(playerRenderComponent.node)
+
         
         missileNode.setupEmitters(withTargetScene: self)
 
@@ -30,9 +31,6 @@ class GameScene: SKScene {
         missile!.node = missileNode
         missileNode.entity = missile
         self.addChild(missileNode)
-        
-        playerNode.position = CGPointMake(150, 150)
-        missileNode.position = CGPointMake(300, 200)
         
         // Add the entity components to the component systems
         for componentSystem in self.componentSystems {
@@ -55,10 +53,11 @@ class GameScene: SKScene {
     
     lazy var componentSystems: [GKComponentSystem] = {
         let targetingSystem = GKComponentSystem(componentClass: TargetingComponent.self)
-        return [targetingSystem]
+        let renderSystem = GKComponentSystem(componentClass: RenderComponent.self)
+        return [targetingSystem, renderSystem]
     }()
     
-    /// Called before each frame is rendered.
+    // Called before each frame is rendered.
     override func update(currentTime: NSTimeInterval) {
         
         // Calculate the amount of time since `update` was last called.
