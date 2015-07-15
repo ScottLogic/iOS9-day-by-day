@@ -23,6 +23,7 @@
 		707584321B54152500712B8C /* MissileFire.sks in Resources */ = {isa = PBXBuildFile; fileRef = 707584301B54152500712B8C /* MissileFire.sks */; };
 		707584331B54152500712B8C /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 707584311B54152500712B8C /* spark.png */; };
 		707584351B54F69500712B8C /* MissileSmoke.sks in Resources */ = {isa = PBXBuildFile; fileRef = 707584341B54F69500712B8C /* MissileSmoke.sks */; };
+		7086483B1B565A56001E0926 /* NodeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7086483A1B565A56001E0926 /* NodeEntity.swift */; };
 		70D1DA7D1B554DDA006070E7 /* RenderComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D1DA7C1B554DDA006070E7 /* RenderComponent.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		707584301B54152500712B8C /* MissileFire.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MissileFire.sks; sourceTree = "<group>"; };
 		707584311B54152500712B8C /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		707584341B54F69500712B8C /* MissileSmoke.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MissileSmoke.sks; sourceTree = "<group>"; };
+		7086483A1B565A56001E0926 /* NodeEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NodeEntity.swift; sourceTree = "<group>"; };
 		70D1DA7C1B554DDA006070E7 /* RenderComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RenderComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -98,6 +100,7 @@
 			children = (
 				7075841E1B53BFCA00712B8C /* Player.swift */,
 				707584201B53C09E00712B8C /* Missile.swift */,
+				7086483A1B565A56001E0926 /* NodeEntity.swift */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 				7075842D1B53C8A600712B8C /* MissileNode.swift in Sources */,
 				70D1DA7D1B554DDA006070E7 /* RenderComponent.swift in Sources */,
 				7075841F1B53BFCA00712B8C /* Player.swift in Sources */,
+				7086483B1B565A56001E0926 /* NodeEntity.swift in Sources */,
 				7075840C1B53BE0600712B8C /* GameScene.swift in Sources */,
 				7075840E1B53BE0600712B8C /* GameViewController.swift in Sources */,
 				7075842F1B53C98800712B8C /* PlayerNode.swift in Sources */,

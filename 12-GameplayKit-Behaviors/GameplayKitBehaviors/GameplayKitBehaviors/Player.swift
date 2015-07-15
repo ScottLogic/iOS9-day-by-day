@@ -10,7 +10,7 @@ import GameKit
 
 class PlayerAgent: GKAgent2D {}
 
-class Player: GKEntity, GKAgentDelegate {
+class Player: NodeEntity, GKAgentDelegate {
     
     let agent:PlayerAgent = PlayerAgent()
 
@@ -18,6 +18,7 @@ class Player: GKEntity, GKAgentDelegate {
         super.init()
         
         let renderComponent = RenderComponent(entity: self)
+        renderComponent.node.addChild(PlayerNode())
         addComponent(renderComponent)
         
         agent.delegate = self
@@ -33,12 +34,6 @@ class Player: GKEntity, GKAgentDelegate {
     func agentWillUpdate(agent: GKAgent) {
         if let agent2d = agent as? GKAgent2D {
             agent2d.position = float2(Float(node.position.x), Float(node.position.y))
-        }
-    }
-    
-    var node:PlayerNode {
-        get {
-            return componentForClass(RenderComponent.self)!.node as! PlayerNode
         }
     }
 }

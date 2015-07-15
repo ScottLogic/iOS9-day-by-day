@@ -11,7 +11,7 @@ import SpriteKit
 
 class PlayerNode: EntityNode {
     
-    let shape = SKShapeNode(circleOfRadius: 20)
+    let shape = SKShapeNode(rect: CGRectMake(0, 0, 40, 40))
     
     override init() {
         super.init()
