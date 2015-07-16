@@ -1,5 +1,5 @@
 #iOS 9 Day by Day
-#10. GameplayKit - Pathfinding
+#11. GameplayKit - Pathfinding
 
 In previous releases of iOS, Apple have put a lot of emphasis on making it easier for developers to create games for their platforms. In iOS 7, they introduced [SpriteKit](https://developer.apple.com/library/ios/documentation/GraphicsAnimation/Conceptual/SpriteKit_PG/Introduction/Introduction.html), which is a 2D graphics and animation library that you can use to create interactive games for the iOS and OS X platforms. [SceneKit](https://developer.apple.com/library/ios/documentation/SceneKit/Reference/SceneKit_Framework/) has been available for the Mac since 2012, but at WWDC 2014, they introduced it to iOS and added a lot of new features, such as particle effects and physics simulation. 
 
