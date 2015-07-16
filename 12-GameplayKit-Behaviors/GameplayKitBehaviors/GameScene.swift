@@ -16,7 +16,6 @@ class GameScene: SKScene {
     
     var lastUpdateTimeInterval: NSTimeInterval = 0
     
-    // The component
     lazy var componentSystems: [GKComponentSystem] = {
         let targetingSystem = GKComponentSystem(componentClass: TargetingComponent.self)
         let renderSystem = GKComponentSystem(componentClass: RenderComponent.self)

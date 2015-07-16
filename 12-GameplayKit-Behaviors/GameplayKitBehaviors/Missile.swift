@@ -9,11 +9,7 @@
 import GameKit
 import SpriteKit
 
-class MissileAgent: GKAgent2D {}
-
 class Missile: NodeEntity, GKAgentDelegate {
-    
-    var agent:MissileAgent = MissileAgent()
     
     let missileNode = MissileNode()
     
@@ -27,9 +23,6 @@ class Missile: NodeEntity, GKAgentDelegate {
         let targetingComponent = TargetingComponent(withTargetAgent: targetAgent)
         targetingComponent.delegate = self
         addComponent(targetingComponent)
-        
-        agent.delegate = self
-        addComponent(agent)
     }
     
     func setupEmitters(withTargetScene scene:SKScene) {
@@ -40,7 +33,6 @@ class Missile: NodeEntity, GKAgentDelegate {
         if let agent2d = agent as? GKAgent2D {
             node.position = CGPoint(x: CGFloat(agent2d.position.x), y: CGFloat(agent2d.position.y))
             node.zRotation = CGFloat(agent2d.rotation)
-            print(node.position)
         }
     }
     
