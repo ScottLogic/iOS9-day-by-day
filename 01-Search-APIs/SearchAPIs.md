@@ -74,7 +74,7 @@ The final step is to call `indexSearchableItems` on the default `CSSearchableInd
 
 And that's it! When you run your application, the data will be stored. When you search in spotlight, your friends should appear!
 
-![As you can see from the screenshot, there's a known issue in iOS9 beta 1 where thumbnail images don't show in Spotlight.](images/searchResults.png)
+![As you can see from the screenshot, the details about the person and a thumbnail image appear in spotlight search results](images/searchResults.png)
 
 ###Responding to User Selection
 Now users can see your results in Spotlight, hopefully they will tap on them! But what happens when they do? Well, at the minute, tapping a result will just open the main screen of your app. If you wish to display the friend that the user tapped on, there's a little more work involved. We can specify our app's behaviour when it is opened this way through the `continueUserActivity` `UIApplicationDelegate` method in the app's `AppDelegate`.
