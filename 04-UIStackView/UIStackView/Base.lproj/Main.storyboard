@@ -23,7 +23,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="PKj-dv-ylq">
                                         <rect key="frame" x="0.0" y="0.0" width="560" height="500"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pete" translatesAutoresizingMaskIntoConstraints="NO" id="Hfw-9E-lnL">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="251" image="pete" translatesAutoresizingMaskIntoConstraints="NO" id="Hfw-9E-lnL">
                                                 <rect key="frame" x="0.0" y="0.0" width="125" height="500"/>
                                                 <color key="backgroundColor" red="0.85882352941176465" green="0.031372549019607843" blue="0.066666666666666666" alpha="1" colorSpace="calibratedRGB"/>
                                             </imageView>
@@ -31,40 +31,10 @@
                                                 <rect key="frame" x="131" y="0.0" width="132" height="500"/>
                                                 <color key="backgroundColor" red="0.85882352941176465" green="0.031372549019607843" blue="0.066666666666666666" alpha="1" colorSpace="calibratedRGB"/>
                                             </imageView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ry2-f4-Uzn">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="becky" translatesAutoresizingMaskIntoConstraints="NO" id="3g1-BO-5Q5">
                                                 <rect key="frame" x="268" y="0.0" width="151" height="500"/>
-                                                <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="fm4-EX-C5N">
-                                                        <rect key="frame" x="0.0" y="0.0" width="151" height="500"/>
-                                                        <subviews>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Zxh-hE-k2M">
-                                                                <rect key="frame" x="0.0" y="0.0" width="151" height="500"/>
-                                                                <subviews>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="CuV-Ej-mY1">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="151" height="500"/>
-                                                                        <subviews>
-                                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="iOf-nJ-5ad">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="151" height="500"/>
-                                                                                <subviews>
-                                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="JqZ-lw-LF0">
-                                                                                        <rect key="frame" x="0.0" y="0.0" width="151" height="500"/>
-                                                                                        <subviews>
-                                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="becky" translatesAutoresizingMaskIntoConstraints="NO" id="3g1-BO-5Q5">
-                                                                                                <rect key="frame" x="0.0" y="0.0" width="151" height="500"/>
-                                                                                                <color key="backgroundColor" red="0.85882352941176465" green="0.031372549019607843" blue="0.066666666666666666" alpha="1" colorSpace="calibratedRGB"/>
-                                                                                            </imageView>
-                                                                                        </subviews>
-                                                                                    </stackView>
-                                                                                </subviews>
-                                                                            </stackView>
-                                                                        </subviews>
-                                                                    </stackView>
-                                                                </subviews>
-                                                            </stackView>
-                                                        </subviews>
-                                                    </stackView>
-                                                </subviews>
-                                            </stackView>
+                                                <color key="backgroundColor" red="0.85882352941176465" green="0.031372549019607843" blue="0.066666666666666666" alpha="1" colorSpace="calibratedRGB"/>
+                                            </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ray" translatesAutoresizingMaskIntoConstraints="NO" id="dRc-Xv-cE0">
                                                 <rect key="frame" x="425" y="0.0" width="135" height="500"/>
                                                 <color key="backgroundColor" red="0.85882352941176465" green="0.031372549019607843" blue="0.066666666666666666" alpha="1" colorSpace="calibratedRGB"/>
