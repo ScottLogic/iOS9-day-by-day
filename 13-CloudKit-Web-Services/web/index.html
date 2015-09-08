@@ -1,0 +1,53 @@
+<html>
+<head>
+	<title>iOS9 Day by Day - CloudKit Web Services Example</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-min.js"></script>
+	<script type="text/javascript" src="cloudNotes.js"></script>
+	<script src="https://cdn.apple-cloudkit.com/ck/1/cloudkit.js" async></script>
+</head>
+<body>
+
+	<div class="container">
+
+		<div class="page-header">
+			<h1>CloudNotes <small>Example CloudKit JS Application</small></h1>
+			<span data-bind="text: displayUserName"></span>
+			<div id="apple-sign-in-button"></div>
+		</div>
+
+		<div data-bind="visible: newNoteVisible">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Add New Note</h3>
+				</div>
+				<div class="panel-body">
+					<form data-bind="submit: saveNewNote">
+						<div class="form-group">
+							<label>Title</label>
+							<input class="form-control" placeholder="Title" data-bind="value: newNoteTitle" />
+						</div>
+						<div class="form-group">
+							<label>Content</label>
+							<input class="form-control" placeholder="Content" data-bind="value: newNoteContent" />
+						</div>
+						<button type="submit" data-bind="enable: saveButtonEnabled" class="btn btn-primary pull-right">Save Note</button>
+					</form>
+				</div>
+			</div>
+			<hr>
+		</div>
+
+		<div data-bind="foreach: notes">
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<h4><span data-bind="text: fields.title.value"></span></h4>
+					<p><span data-bind="text: fields.content.value"></span></p>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+</body>
+</html>
