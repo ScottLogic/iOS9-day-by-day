@@ -7,7 +7,7 @@ UIKit Dynamics was introduced in iOS 7, to give developers an easy way to add so
 
 Prior to iOS 9, collision bounds in UIKitDynamics could only be rectangular. This led to some strange visual effects when views collided if they were not perfectly rectangular. Now, iOS 9 supports three types of collision bound. Rectangle, Ellipse, and Path. The path can be anything, as long as it is counter clockwise and not self intersecting. There is one caveat to this though. The path **must** be convex, and not concave. 
 
-In order to provide a collision bounds type, then you can subclass UIView and provide your own.
+In order to provide a custom collision bounds type, you can subclass UIView and provide your own.
 
 	class Ellipse: UIView {
 		override var collisionBoundsType: UIDynamicItemCollisionBoundsType {
@@ -19,7 +19,7 @@ You can do the same if you have custom view with a custom collision bounds path 
 
 ##UIFieldBehavior
 
-Before iOS 9, the only type of field behaviour available was the gravity behavior. This has been a UIFieldBehavior all along, but the API was not exposed for the user of the SDK to subclass.
+Before iOS 9, the only type of field behaviour available was the gravity behaviour. This has been a UIFieldBehavior all along, but the API was not exposed for the user of the SDK to subclass.
 
 Now, UIKit Dynamics contains a variety of field behaviours:
 
@@ -28,7 +28,7 @@ Now, UIKit Dynamics contains a variety of field behaviours:
 - Noise
 - Custom
 
-These behaviors all have a variety of properties to customise how they effect the views in the UIDynamicAnimator, and are very simple to use and add.
+These behaviours all have a variety of properties to customise how they effect the views in the UIDynamicAnimator, and are very simple to use and add.
 
 ##Building a UIFieldBehavior & Non-Rectangular Collision Bounds Example
 
