@@ -1,0 +1,369 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		707584081B53BE0600712B8C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707584071B53BE0600712B8C /* AppDelegate.swift */; };
+		7075840A1B53BE0600712B8C /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 707584091B53BE0600712B8C /* GameScene.sks */; };
+		7075840C1B53BE0600712B8C /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7075840B1B53BE0600712B8C /* GameScene.swift */; };
+		7075840E1B53BE0600712B8C /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7075840D1B53BE0600712B8C /* GameViewController.swift */; };
+		707584111B53BE0600712B8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7075840F1B53BE0600712B8C /* Main.storyboard */; };
+		707584131B53BE0700712B8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 707584121B53BE0700712B8C /* Assets.xcassets */; };
+		707584161B53BE0700712B8C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 707584141B53BE0700712B8C /* LaunchScreen.storyboard */; };
+		7075841F1B53BFCA00712B8C /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7075841E1B53BFCA00712B8C /* Player.swift */; };
+		707584211B53C09E00712B8C /* Missile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707584201B53C09E00712B8C /* Missile.swift */; };
+		707584261B53C29A00712B8C /* TargetingComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707584251B53C29A00712B8C /* TargetingComponent.swift */; };
+		7075842B1B53C80D00712B8C /* EntityNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7075842A1B53C80D00712B8C /* EntityNode.swift */; };
+		7075842D1B53C8A600712B8C /* MissileNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7075842C1B53C8A600712B8C /* MissileNode.swift */; };
+		7075842F1B53C98800712B8C /* PlayerNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7075842E1B53C98800712B8C /* PlayerNode.swift */; };
+		707584321B54152500712B8C /* MissileFire.sks in Resources */ = {isa = PBXBuildFile; fileRef = 707584301B54152500712B8C /* MissileFire.sks */; };
+		707584331B54152500712B8C /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 707584311B54152500712B8C /* spark.png */; };
+		707584351B54F69500712B8C /* MissileSmoke.sks in Resources */ = {isa = PBXBuildFile; fileRef = 707584341B54F69500712B8C /* MissileSmoke.sks */; };
+		7086483B1B565A56001E0926 /* NodeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7086483A1B565A56001E0926 /* NodeEntity.swift */; };
+		70D1DA7D1B554DDA006070E7 /* RenderComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D1DA7C1B554DDA006070E7 /* RenderComponent.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		707584041B53BE0600712B8C /* GameplayKitBehaviors.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameplayKitBehaviors.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		707584071B53BE0600712B8C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		707584091B53BE0600712B8C /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		7075840B1B53BE0600712B8C /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		7075840D1B53BE0600712B8C /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		707584101B53BE0600712B8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		707584121B53BE0700712B8C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		707584151B53BE0700712B8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		707584171B53BE0700712B8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7075841E1B53BFCA00712B8C /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		707584201B53C09E00712B8C /* Missile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Missile.swift; sourceTree = "<group>"; };
+		707584251B53C29A00712B8C /* TargetingComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TargetingComponent.swift; sourceTree = "<group>"; };
+		7075842A1B53C80D00712B8C /* EntityNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityNode.swift; sourceTree = "<group>"; };
+		7075842C1B53C8A600712B8C /* MissileNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MissileNode.swift; sourceTree = "<group>"; };
+		7075842E1B53C98800712B8C /* PlayerNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayerNode.swift; path = "../../../../../work/iOS9-day-by-day/12-GameplayKit-Behaviors/GameplayKitBehaviors/GameplayKitBehaviors/PlayerNode.swift"; sourceTree = "<group>"; };
+		707584301B54152500712B8C /* MissileFire.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MissileFire.sks; sourceTree = "<group>"; };
+		707584311B54152500712B8C /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
+		707584341B54F69500712B8C /* MissileSmoke.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MissileSmoke.sks; sourceTree = "<group>"; };
+		7086483A1B565A56001E0926 /* NodeEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NodeEntity.swift; sourceTree = "<group>"; };
+		70D1DA7C1B554DDA006070E7 /* RenderComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RenderComponent.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		707584011B53BE0600712B8C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		707583FB1B53BE0600712B8C = {
+			isa = PBXGroup;
+			children = (
+				707584061B53BE0600712B8C /* GameplayKitBehaviors */,
+				707584051B53BE0600712B8C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		707584051B53BE0600712B8C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				707584041B53BE0600712B8C /* GameplayKitBehaviors.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		707584061B53BE0600712B8C /* GameplayKitBehaviors */ = {
+			isa = PBXGroup;
+			children = (
+				707584291B53C80000712B8C /* Nodes */,
+				707584221B53C0A300712B8C /* Components */,
+				7075841D1B53BF5600712B8C /* Entities */,
+				707584071B53BE0600712B8C /* AppDelegate.swift */,
+				707584091B53BE0600712B8C /* GameScene.sks */,
+				7075840B1B53BE0600712B8C /* GameScene.swift */,
+				7075840D1B53BE0600712B8C /* GameViewController.swift */,
+				7075840F1B53BE0600712B8C /* Main.storyboard */,
+				707584121B53BE0700712B8C /* Assets.xcassets */,
+				707584141B53BE0700712B8C /* LaunchScreen.storyboard */,
+				707584171B53BE0700712B8C /* Info.plist */,
+			);
+			path = GameplayKitBehaviors;
+			sourceTree = "<group>";
+		};
+		7075841D1B53BF5600712B8C /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				7075841E1B53BFCA00712B8C /* Player.swift */,
+				707584201B53C09E00712B8C /* Missile.swift */,
+				7086483A1B565A56001E0926 /* NodeEntity.swift */,
+			);
+			name = Entities;
+			sourceTree = "<group>";
+		};
+		707584221B53C0A300712B8C /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				707584251B53C29A00712B8C /* TargetingComponent.swift */,
+				70D1DA7C1B554DDA006070E7 /* RenderComponent.swift */,
+			);
+			name = Components;
+			sourceTree = "<group>";
+		};
+		707584291B53C80000712B8C /* Nodes */ = {
+			isa = PBXGroup;
+			children = (
+				7075842E1B53C98800712B8C /* PlayerNode.swift */,
+				7075842A1B53C80D00712B8C /* EntityNode.swift */,
+				7075842C1B53C8A600712B8C /* MissileNode.swift */,
+				707584301B54152500712B8C /* MissileFire.sks */,
+				707584311B54152500712B8C /* spark.png */,
+				707584341B54F69500712B8C /* MissileSmoke.sks */,
+			);
+			name = Nodes;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		707584031B53BE0600712B8C /* GameplayKitBehaviors */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7075841A1B53BE0700712B8C /* Build configuration list for PBXNativeTarget "GameplayKitBehaviors" */;
+			buildPhases = (
+				707584001B53BE0600712B8C /* Sources */,
+				707584011B53BE0600712B8C /* Frameworks */,
+				707584021B53BE0600712B8C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GameplayKitBehaviors;
+			productName = GameplayKitBehaviors;
+			productReference = 707584041B53BE0600712B8C /* GameplayKitBehaviors.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		707583FC1B53BE0600712B8C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "Shinobi Controls";
+				TargetAttributes = {
+					707584031B53BE0600712B8C = {
+						CreatedOnToolsVersion = 7.0;
+					};
+				};
+			};
+			buildConfigurationList = 707583FF1B53BE0600712B8C /* Build configuration list for PBXProject "GameplayKitBehaviors" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 707583FB1B53BE0600712B8C;
+			productRefGroup = 707584051B53BE0600712B8C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				707584031B53BE0600712B8C /* GameplayKitBehaviors */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		707584021B53BE0600712B8C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7075840A1B53BE0600712B8C /* GameScene.sks in Resources */,
+				707584331B54152500712B8C /* spark.png in Resources */,
+				707584161B53BE0700712B8C /* LaunchScreen.storyboard in Resources */,
+				707584321B54152500712B8C /* MissileFire.sks in Resources */,
+				707584131B53BE0700712B8C /* Assets.xcassets in Resources */,
+				707584351B54F69500712B8C /* MissileSmoke.sks in Resources */,
+				707584111B53BE0600712B8C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		707584001B53BE0600712B8C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7075842D1B53C8A600712B8C /* MissileNode.swift in Sources */,
+				70D1DA7D1B554DDA006070E7 /* RenderComponent.swift in Sources */,
+				7075841F1B53BFCA00712B8C /* Player.swift in Sources */,
+				7086483B1B565A56001E0926 /* NodeEntity.swift in Sources */,
+				7075840C1B53BE0600712B8C /* GameScene.swift in Sources */,
+				7075840E1B53BE0600712B8C /* GameViewController.swift in Sources */,
+				7075842F1B53C98800712B8C /* PlayerNode.swift in Sources */,
+				7075842B1B53C80D00712B8C /* EntityNode.swift in Sources */,
+				707584261B53C29A00712B8C /* TargetingComponent.swift in Sources */,
+				707584081B53BE0600712B8C /* AppDelegate.swift in Sources */,
+				707584211B53C09E00712B8C /* Missile.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		7075840F1B53BE0600712B8C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				707584101B53BE0600712B8C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		707584141B53BE0700712B8C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				707584151B53BE0700712B8C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		707584181B53BE0700712B8C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		707584191B53BE0700712B8C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7075841B1B53BE0700712B8C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = GameplayKitBehaviors/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = shinobicontrols.GameplayKitBehaviors;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		7075841C1B53BE0700712B8C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = GameplayKitBehaviors/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = shinobicontrols.GameplayKitBehaviors;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		707583FF1B53BE0600712B8C /* Build configuration list for PBXProject "GameplayKitBehaviors" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				707584181B53BE0700712B8C /* Debug */,
+				707584191B53BE0700712B8C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7075841A1B53BE0700712B8C /* Build configuration list for PBXNativeTarget "GameplayKitBehaviors" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7075841B1B53BE0700712B8C /* Debug */,
+				7075841C1B53BE0700712B8C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 707583FC1B53BE0600712B8C /* Project object */;
+}

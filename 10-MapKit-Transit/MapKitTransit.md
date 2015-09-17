@@ -208,7 +208,7 @@ The app is now fully functional, but it's a bit difficult to tell which pin is t
 		pin.pinTintColor = annotation === userAnnotation ? UIColor.redColor() : UIColor.blueColor()
 		return pin
 	}
-	
+
 `pinTintColor` is a new property introduced in iOS 9 which allows you to specify the tint color of the top of the pin in the annotation. As you can see above, if the annotation passed to the `mapView:viewForAnnotation` is equal to the userAnnotation, then we make the tint color red, and otherwise make it blue. This allows us to distinguish between the user location and the destinations on the map.
 
 ##Further Reading
