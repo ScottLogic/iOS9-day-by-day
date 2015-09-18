@@ -153,6 +153,7 @@
 		707583FC1B53BE0600712B8C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Shinobi Controls";
 				TargetAttributes = {

@@ -44,7 +44,7 @@ class DetailViewController: UIViewController {
                     let phoneNumber = number.value as! CNPhoneNumber
                     numberArray.append(phoneNumber.stringValue)
                 }
-                phoneNumberLabel.text = ", ".join(numberArray)
+                phoneNumberLabel.text = numberArray.joinWithSeparator(", ")
             }
         }
     }

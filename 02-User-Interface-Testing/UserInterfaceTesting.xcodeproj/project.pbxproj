@@ -143,6 +143,7 @@
 		70F4108A1B396B79007C4351 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = ShinobiControls;
 				TargetAttributes = {
@@ -391,6 +392,7 @@
 				70F410B11B396B7A007C4351 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		70F410B21B396B7A007C4351 /* Build configuration list for PBXNativeTarget "UserInterfaceTestingUITests" */ = {
 			isa = XCConfigurationList;
@@ -399,6 +401,7 @@
 				70F410B41B396B7A007C4351 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

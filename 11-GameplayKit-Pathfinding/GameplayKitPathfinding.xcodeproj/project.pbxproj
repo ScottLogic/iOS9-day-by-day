@@ -96,6 +96,7 @@
 		707583D81B53A25E00712B8C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Shinobi Controls";
 				TargetAttributes = {
@@ -293,6 +294,7 @@
 				707583F81B53A26000712B8C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -99,6 +99,7 @@
 		70E707461B32FA2A004FCADD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Scott Logic Ltd";
 				TargetAttributes = {

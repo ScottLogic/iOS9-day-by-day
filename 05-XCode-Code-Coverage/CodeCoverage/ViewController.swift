@@ -36,12 +36,13 @@ class ViewController: UIViewController {
         // Go through every character in the original string.
         for index in 1...noWhitespaceOriginalString.characters.count {
             
+            
             // Find the index of the character at position i, then store the character.
-            let originalWordIndex = advance(noWhitespaceOriginalString.startIndex, index - 1)
+            let originalWordIndex = noWhitespaceComparisonString.startIndex.advancedBy(index - 1)
             let originalWordCharacter = noWhitespaceOriginalString[originalWordIndex]
             
             // Do the same as above for the compared word.
-            let comparedWordIndex = advance(noWhitespaceComparisonString.startIndex, index - 1)
+            let comparedWordIndex = noWhitespaceComparisonString.startIndex.advancedBy(index - 1)
             let comparedWordCharacter = noWhitespaceComparisonString[comparedWordIndex]
             
             // Increment the value in the dictionary for the original word character. If it doesn't exist, set it to 0 first.

@@ -99,6 +99,7 @@
 		702BE00C1B9D8C17005F8E5A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = shinobicontrols;
 				TargetAttributes = {
@@ -309,6 +310,7 @@
 				702BE02A1B9D8C18005F8E5A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
