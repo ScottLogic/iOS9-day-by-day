@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		705213401B579C5100400BFF /* PlayerNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7052133F1B579C5100400BFF /* PlayerNode.swift */; };
 		707584081B53BE0600712B8C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707584071B53BE0600712B8C /* AppDelegate.swift */; };
 		7075840A1B53BE0600712B8C /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 707584091B53BE0600712B8C /* GameScene.sks */; };
 		7075840C1B53BE0600712B8C /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7075840B1B53BE0600712B8C /* GameScene.swift */; };
@@ -19,7 +20,6 @@
 		707584261B53C29A00712B8C /* TargetingComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707584251B53C29A00712B8C /* TargetingComponent.swift */; };
 		7075842B1B53C80D00712B8C /* EntityNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7075842A1B53C80D00712B8C /* EntityNode.swift */; };
 		7075842D1B53C8A600712B8C /* MissileNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7075842C1B53C8A600712B8C /* MissileNode.swift */; };
-		7075842F1B53C98800712B8C /* PlayerNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7075842E1B53C98800712B8C /* PlayerNode.swift */; };
 		707584321B54152500712B8C /* MissileFire.sks in Resources */ = {isa = PBXBuildFile; fileRef = 707584301B54152500712B8C /* MissileFire.sks */; };
 		707584331B54152500712B8C /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 707584311B54152500712B8C /* spark.png */; };
 		707584351B54F69500712B8C /* MissileSmoke.sks in Resources */ = {isa = PBXBuildFile; fileRef = 707584341B54F69500712B8C /* MissileSmoke.sks */; };
@@ -28,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7052133F1B579C5100400BFF /* PlayerNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayerNode.swift; path = "../../../../work/iOS9-day-by-day/12-GameplayKit-Behaviors/GameplayKitBehaviors/PlayerNode.swift"; sourceTree = "<group>"; };
 		707584041B53BE0600712B8C /* GameplayKitBehaviors.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameplayKitBehaviors.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		707584071B53BE0600712B8C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		707584091B53BE0600712B8C /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -42,7 +43,6 @@
 		707584251B53C29A00712B8C /* TargetingComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TargetingComponent.swift; sourceTree = "<group>"; };
 		7075842A1B53C80D00712B8C /* EntityNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityNode.swift; sourceTree = "<group>"; };
 		7075842C1B53C8A600712B8C /* MissileNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MissileNode.swift; sourceTree = "<group>"; };
-		7075842E1B53C98800712B8C /* PlayerNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayerNode.swift; path = "../../../../../work/iOS9-day-by-day/12-GameplayKit-Behaviors/GameplayKitBehaviors/GameplayKitBehaviors/PlayerNode.swift"; sourceTree = "<group>"; };
 		707584301B54152500712B8C /* MissileFire.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MissileFire.sks; sourceTree = "<group>"; };
 		707584311B54152500712B8C /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		707584341B54F69500712B8C /* MissileSmoke.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MissileSmoke.sks; sourceTree = "<group>"; };
@@ -117,7 +117,7 @@
 		707584291B53C80000712B8C /* Nodes */ = {
 			isa = PBXGroup;
 			children = (
-				7075842E1B53C98800712B8C /* PlayerNode.swift */,
+				7052133F1B579C5100400BFF /* PlayerNode.swift */,
 				7075842A1B53C80D00712B8C /* EntityNode.swift */,
 				7075842C1B53C8A600712B8C /* MissileNode.swift */,
 				707584301B54152500712B8C /* MissileFire.sks */,
@@ -153,6 +153,7 @@
 		707583FC1B53BE0600712B8C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Shinobi Controls";
 				TargetAttributes = {
@@ -203,11 +204,11 @@
 			files = (
 				7075842D1B53C8A600712B8C /* MissileNode.swift in Sources */,
 				70D1DA7D1B554DDA006070E7 /* RenderComponent.swift in Sources */,
+				705213401B579C5100400BFF /* PlayerNode.swift in Sources */,
 				7075841F1B53BFCA00712B8C /* Player.swift in Sources */,
 				7086483B1B565A56001E0926 /* NodeEntity.swift in Sources */,
 				7075840C1B53BE0600712B8C /* GameScene.swift in Sources */,
 				7075840E1B53BE0600712B8C /* GameViewController.swift in Sources */,
-				7075842F1B53C98800712B8C /* PlayerNode.swift in Sources */,
 				7075842B1B53C80D00712B8C /* EntityNode.swift in Sources */,
 				707584261B53C29A00712B8C /* TargetingComponent.swift in Sources */,
 				707584081B53BE0600712B8C /* AppDelegate.swift in Sources */,

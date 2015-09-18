@@ -59,7 +59,7 @@ class UserInterfaceTestingUITests: XCTestCase {
             incrementButton.tap()
 
             // Ensure that the value has increased by 1.
-            XCTAssertEqual(valueLabel.value as! String, "\(index)")
+            XCTAssertEqual(valueLabel.value as! String, "\(index + 1)")
         }
     }
 }

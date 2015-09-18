@@ -12,7 +12,15 @@ import GameKit
 class GameScene: SKScene {
     
     let player:Player = Player()
-    var missile:Missile?
+    var missile:Missile? // Can't initialise missile here as it needs the player object as a target in it's initialiser.
+    
+    var lastUpdateTimeInterval: NSTimeInterval = 0
+    
+    lazy var componentSystems: [GKComponentSystem] = {
+        let targetingSystem = GKComponentSystem(componentClass: TargetingComponent.self)
+        let renderSystem = GKComponentSystem(componentClass: RenderComponent.self)
+        return [targetingSystem, renderSystem]
+    }()
     
     override func didMoveToView(view: SKView) {
         super.didMoveToView(view)
@@ -20,11 +28,14 @@ class GameScene: SKScene {
         player.node.position = CGPointMake(100, 100)
         self.addChild(player.node)
         
+        // Setup the missile entity with the player's agent as it's target.
         missile = Missile(withTargetAgent: player.agent)
+        // Pass the scene to the setupEmitters function so that the emitters leave a trail, rather than moving with the
+        // missile itself.
         missile!.setupEmitters(withTargetScene: self)
         self.addChild(missile!.node)
 
-        // Add the entity components to the component systems
+        // Add the player and missile entity components to the component systems
         for componentSystem in self.componentSystems {
             componentSystem.addComponentWithEntity(player)
             componentSystem.addComponentWithEntity(missile!)
@@ -39,20 +50,13 @@ class GameScene: SKScene {
         }
     }
     
-    var lastUpdateTimeInterval: NSTimeInterval = 0
-    
-    lazy var componentSystems: [GKComponentSystem] = {
-        let targetingSystem = GKComponentSystem(componentClass: TargetingComponent.self)
-        let renderSystem = GKComponentSystem(componentClass: RenderComponent.self)
-        return [targetingSystem, renderSystem]
-    }()
-    
     // Called before each frame is rendered.
     override func update(currentTime: NSTimeInterval) {
         
         // Calculate the amount of time since `update` was last called.
         let deltaTime = currentTime - lastUpdateTimeInterval
         
+        // Update every component system in the componentSystems array with the delta time.
         for componentSystem in componentSystems {
             componentSystem.updateWithDeltaTime(deltaTime)
         }

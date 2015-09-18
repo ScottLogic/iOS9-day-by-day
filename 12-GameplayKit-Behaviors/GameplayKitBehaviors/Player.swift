@@ -8,11 +8,9 @@
 
 import GameKit
 
-class PlayerAgent: GKAgent2D {}
-
 class Player: NodeEntity, GKAgentDelegate {
     
-    let agent:PlayerAgent = PlayerAgent()
+    let agent:GKAgent2D = GKAgent2D()
 
     override init() {
         super.init()
