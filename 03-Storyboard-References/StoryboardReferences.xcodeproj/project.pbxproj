@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		703BC8D51B3AC8CC00FF41C2 /* OldMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 703BC8D31B3AC8CC00FF41C2 /* OldMain.storyboard */; };
 		703BC8D81B3AD15800FF41C2 /* More.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 703BC8D61B3AD15800FF41C2 /* More.storyboard */; };
 		703BC8DE1B3ADEA600FF41C2 /* ContactDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 703BC8DC1B3ADEA600FF41C2 /* ContactDetail.storyboard */; };
 		703BC8E11B3ADF2F00FF41C2 /* Contacts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 703BC8DF1B3ADF2F00FF41C2 /* Contacts.storyboard */; };
@@ -20,7 +19,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		703BC8D41B3AC8CC00FF41C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "../../../../work/iOS9-day-by-day/03-Storyboard-References/StoryboardReferences/Base.lproj/OldMain.storyboard"; sourceTree = "<group>"; };
 		703BC8D71B3AD15800FF41C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/More.storyboard; sourceTree = "<group>"; };
 		703BC8DD1B3ADEA600FF41C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ContactDetail.storyboard; sourceTree = "<group>"; };
 		703BC8E01B3ADF2F00FF41C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Contacts.storyboard; sourceTree = "<group>"; };
@@ -66,7 +64,6 @@
 			children = (
 				70620B601B3AB4C70067F88F /* AppDelegate.swift */,
 				70620B621B3AB4C70067F88F /* ViewController.swift */,
-				703BC8D31B3AC8CC00FF41C2 /* OldMain.storyboard */,
 				70620B641B3AB4C70067F88F /* Main.storyboard */,
 				703BC8E21B3ADF3E00FF41C2 /* Favourites.storyboard */,
 				703BC8DF1B3ADF2F00FF41C2 /* Contacts.storyboard */,
@@ -140,7 +137,6 @@
 				70620B6B1B3AB4C70067F88F /* LaunchScreen.storyboard in Resources */,
 				703BC8D81B3AD15800FF41C2 /* More.storyboard in Resources */,
 				703BC8DE1B3ADEA600FF41C2 /* ContactDetail.storyboard in Resources */,
-				703BC8D51B3AC8CC00FF41C2 /* OldMain.storyboard in Resources */,
 				703BC8E41B3ADF3E00FF41C2 /* Favourites.storyboard in Resources */,
 				70620B681B3AB4C70067F88F /* Assets.xcassets in Resources */,
 				703BC8E11B3ADF2F00FF41C2 /* Contacts.storyboard in Resources */,
@@ -163,14 +159,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		703BC8D31B3AC8CC00FF41C2 /* OldMain.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				703BC8D41B3AC8CC00FF41C2 /* Base */,
-			);
-			name = OldMain.storyboard;
-			sourceTree = "<group>";
-		};
 		703BC8D61B3AD15800FF41C2 /* More.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
